@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AndroidAppFundaments</string>
+    <string name="go_to_next_screen">Go to next screen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_1">Fragment 1</string>
+    <string name="fragment_2">Fragment 2</string>
+    <string name="go_back">Go back</string>
 </resources>
