@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">AndroidAppFundaments</string>
-    <string name="go_to_next_screen">Go to next screen</string>
+    <string name="see_next_die">Se next die</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_1">Fragment 1</string>
     <string name="fragment_2">Fragment 2</string>
-    <string name="go_back">Go back</string>
+    <string name="see_previous_die">See previous die</string>
+    <string name="roll_dice">Roll Dice</string>
+    <string name="dice_icon">Dice icon</string>
+    <string name="first_die">First Die</string>
+    <string name="second_die">Second Die</string>
+    <string name="third_die">Third Die</string>
 </resources>

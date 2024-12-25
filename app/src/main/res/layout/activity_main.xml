@@ -3,9 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/black"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvFirstDie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/first_die"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ivRolledDice1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/ivRolledDice1"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:contentDescription="@string/dice_icon"
+        tools:src="@drawable/ic_dice_one"
+        android:layout_margin="16dp"
+        android:textAlignment="center"
+        android:src="@drawable/ic_dice_unknown"
+        app:layout_constraintBottom_toTopOf="@+id/fcvMainContainer"
+        app:layout_constraintTop_toBottomOf="@id/tvFirstDie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcvMainContainer"
@@ -14,17 +44,27 @@
         android:layout_height="0dp"
         app:defaultNavHost="true"
         app:navGraph="@navigation/main_nav_graph"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRolledDice1"
+        app:layout_constraintBottom_toTopOf="@id/btnRollDice"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
+        android:id="@+id/btnRollDice"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:text="@string/roll_dice"
+        android:layout_margin="48dp"
+        app:layout_constraintBottom_toTopOf="@id/btnGoToNextScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/btnGoToNextScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/go_to_next_screen"
-        android:layout_margin="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:text="@string/see_next_die"
+        android:layout_margin="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
