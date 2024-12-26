@@ -1,6 +1,7 @@
 package com.dev.thorugoh.androidappfundaments
 
 import androidx.annotation.DrawableRes
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -20,6 +21,9 @@ class DiceViewModel:  ViewModel() {
     private val _uiState = MutableStateFlow(DiceUiState())
     val uiState: StateFlow<DiceUiState> = _uiState.asStateFlow()
 
+    private val _uiStateLiveData = MutableLiveData(DiceUiState())
+    val uiStateLiveData: MutableLiveData<DiceUiState> = _uiStateLiveData
+
     fun rollDice() {
         _uiState.update { currentState ->
             currentState.copy(
@@ -29,6 +33,13 @@ class DiceViewModel:  ViewModel() {
                 numberOfRolls = currentState.numberOfRolls + 1
             )
         }
+
+        _uiStateLiveData.value = DiceUiState(
+            rolledDice1ImgRes = getDiceImageRes(Random.nextInt(from = 1, until = 7)),
+            rolledDice2ImgRes = getDiceImageRes(Random.nextInt(from = 1, until = 7)),
+            rolledDice3ImgRes = getDiceImageRes(Random.nextInt(from = 1, until = 7)),
+            numberOfRolls = (_uiStateLiveData.value?.numberOfRolls ?: 0) + 1
+        )
     }
 
     private fun getDiceImageRes(diceValue: Int): Int {
