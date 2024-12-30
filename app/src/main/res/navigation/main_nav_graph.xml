@@ -32,5 +32,17 @@
             android:defaultValue="@null"
             app:argType="string[]"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_secondFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.dev.thorugoh.androidappfundaments.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/action_thirdFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
     </fragment>
 </navigation>

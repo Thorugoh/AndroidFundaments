@@ -66,8 +66,12 @@ class MainActivity : AppCompatActivity() {
                         binding.btnGoToNextScreen.text = getString(R.string.see_next_die)
                     }
                     R.id.secondFragment -> {
-                        navController?.popBackStack()
+                        navController?.navigate(R.id.action_secondFragment_to_thirdFragment)
                         binding.btnGoToNextScreen.text = getString(R.string.see_previous_die)
+                    }
+                    R.id.thirdFragment -> {
+                        navController?.navigate(R.id.action_thirdFragment_to_firstFragment)
+                        binding.btnGoToNextScreen.text = getString(R.string.see_next_die)
                     }
                 }
             }
