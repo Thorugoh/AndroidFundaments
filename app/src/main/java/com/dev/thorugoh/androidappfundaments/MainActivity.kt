@@ -54,18 +54,21 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.btnRollDice.setOnClickListener {
-            AlertDialog.Builder(this@MainActivity)
-                .setTitle("Run dice")
-                .setMessage("Do you want to roll the dice?")
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setPositiveButton("Yes") { _, _ ->
-                    viewModel.rollDice()
-                }
-                .setPositiveButtonIcon(AppCompatResources.getDrawable(this@MainActivity, R.drawable.ic_dice_unknown))
-                .setNegativeButton("No") { _, _ ->}
-                .setCancelable(false)
-                .create()
-                .show()
+//            AlertDialog.Builder(this@MainActivity)
+//                .setTitle("Run dice")
+//                .setMessage("Do you want to roll the dice?")
+//                .setIcon(android.R.drawable.ic_dialog_alert)
+//                .setPositiveButton("Yes") { _, _ ->
+//                    viewModel.rollDice()
+//                }
+//                .setPositiveButtonIcon(AppCompatResources.getDrawable(this@MainActivity, R.drawable.ic_dice_unknown))
+//                .setNegativeButton("No") { _, _ ->}
+//                .setCancelable(false)
+//                .create()
+//                .show()
+//            ConfirmDialogFragment().show(supportFragmentManager, "Confirm")
+            ConfirmBottomSheetDialogFragment().show(supportFragmentManager, "Confirm")
+
 //            viewModel.rollDice()
         }
 

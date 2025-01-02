@@ -4,14 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.lifecycleScope
 import com.dev.thorugoh.androidappfundaments.databinding.DialogFragmentConfirmBinding
-import com.dev.thorugoh.androidappfundaments.databinding.FragmentThirdBinding
-import kotlinx.coroutines.launch
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class ConfirmDialogFragment : DialogFragment() {
+class ConfirmBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private val viewModel: DiceViewModel by activityViewModels()
 
     private var _binding: DialogFragmentConfirmBinding? = null

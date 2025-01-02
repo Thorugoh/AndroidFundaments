@@ -11,4 +11,7 @@
     <string name="first_die">First Die</string>
     <string name="second_die">Second Die</string>
     <string name="third_die">Third Die</string>
+    <string name="title">Title</string>
+    <string name="confirm_message">Confirm message</string>
+    <string name="confirm">Confirm</string>
 </resources>
