@@ -3,7 +3,9 @@ package com.dev.thorugoh.androidappfundaments
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -52,7 +54,19 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.btnRollDice.setOnClickListener {
-            viewModel.rollDice()
+            AlertDialog.Builder(this@MainActivity)
+                .setTitle("Run dice")
+                .setMessage("Do you want to roll the dice?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton("Yes") { _, _ ->
+                    viewModel.rollDice()
+                }
+                .setPositiveButtonIcon(AppCompatResources.getDrawable(this@MainActivity, R.drawable.ic_dice_unknown))
+                .setNegativeButton("No") { _, _ ->}
+                .setCancelable(false)
+                .create()
+                .show()
+//            viewModel.rollDice()
         }
 
         binding.btnGoToNextScreen.setOnClickListener {
