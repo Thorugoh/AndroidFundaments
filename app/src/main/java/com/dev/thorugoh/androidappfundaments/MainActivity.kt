@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -99,6 +100,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnGoToNextScreen.setOnClickListener {
+//            val slideInLeft = AnimationUtils.loadAnimation(this@MainActivity, android.R.anim.slide_in_left)
+            val customAnim = AnimationUtils.loadAnimation(this@MainActivity, R.anim.custom_anim)
+            binding.btnGoToNextScreen.startAnimation(customAnim)
+
             navController?.currentDestination?.id.let {
                 when(it) {
                     R.id.firstFragment -> {
