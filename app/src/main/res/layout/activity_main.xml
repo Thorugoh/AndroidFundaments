@@ -8,6 +8,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarSettingsMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <TextView
         android:id="@+id/tvFirstDie"
         android:layout_width="match_parent"
@@ -16,17 +26,18 @@
         android:text="@string/first_die"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toTopOf="@+id/ivRolledDice1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarSettingsMenu"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/ivRolledDice1"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
         android:contentDescription="@string/dice_icon"
         tools:src="@drawable/ic_dice_one"
         android:layout_margin="16dp"
